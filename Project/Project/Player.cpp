@@ -27,15 +27,15 @@ void Player::HandlePlayerInput() {
 
 	switch (l_playerAction) {
 		case moveRight:
-			m_playerSprite.move(1,0);
+			m_playerSprite.move(8,0);
 			break;
 
 		case moveLeft:
-			m_playerSprite.move(-1, 0);
+			m_playerSprite.move(-8, 0);
 			break;
 
 		case jump:
-			m_playerSprite.move(0, -1);
+			m_playerSprite.move(0, -4);
 			break;
 		default:
 			break;
