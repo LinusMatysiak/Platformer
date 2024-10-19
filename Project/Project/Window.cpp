@@ -12,6 +12,7 @@ Window::~Window() {
 void Window::Setup(const sf::Vector2u l_size) {
 	m_windowSize = l_size;
 	m_windowFPS = 60;
+	m_windowIcon.loadFromFile(global::window::WINDOW_ICON);
 	m_isFullScreen = false;
 	m_isDone = false;
 	Create();
@@ -19,6 +20,7 @@ void Window::Setup(const sf::Vector2u l_size) {
 void Window::Create() {
 	std::uint16_t style = (m_isFullScreen ? sf::Style::Fullscreen : sf::Style::Default);
 	m_window.create(sf::VideoMode(m_windowSize.x, m_windowSize.y, 32), global::window::WINDOW_NAME, style);
+	m_window.setIcon(m_windowIcon.getSize().x, m_windowIcon.getSize().y, m_windowIcon.getPixelsPtr());
 	m_window.setFramerateLimit(m_windowFPS);
 }
 void Window::ToggleFullScreen() {
