@@ -1,5 +1,6 @@
 #pragma once
 #include "Window.h"
+#include "Player.h"
 class Game {
 
 public:
@@ -13,5 +14,7 @@ public:
 	Window* GetWindow();
 
 private:
+	Player player;
+
 	Window m_window;
 };
