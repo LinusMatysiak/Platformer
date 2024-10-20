@@ -1,7 +1,6 @@
 #pragma once
 #include "Window.h"
 #include "Player.h"
-#include "Time.h"
 class Game {
 
 public:
