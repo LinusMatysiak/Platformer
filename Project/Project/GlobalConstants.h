@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cstdint>
+
 namespace global{
 	namespace window {
 		constexpr		char				WINDOW_NAME[7]		{ "Window" };
