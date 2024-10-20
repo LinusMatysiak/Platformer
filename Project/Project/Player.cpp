@@ -9,9 +9,15 @@ void Player::Setup() {
 	m_playerSprite.setTexture(m_playerTexture);
 	m_playerSprite.setOrigin(m_playerTexture.getSize().x / 2, m_playerTexture.getSize().y / 2); // sets player origin at center
 }
+void Player::Move(float l_deltaTime) {
+	m_playerSprite.move(m_velocity.x * speed * l_deltaTime, m_velocity.y * speed * l_deltaTime);
+}
 void Player::HandlePlayerInput() {
 
 	PlayerMovement l_playerAction = none;
+
+	m_velocity.x = 0;
+	m_velocity.y = 0;
 
 	if (sf::Keyboard::isKeyPressed(global::game_inputs::MOVE_LEFT)) {
 		l_playerAction = moveLeft;
@@ -22,20 +28,16 @@ void Player::HandlePlayerInput() {
 	else if (sf::Keyboard::isKeyPressed(global::game_inputs::JUMP)) {
 		l_playerAction = jump;
 	}
-
-	std::cout << "MoveAction: " << l_playerAction << '\n';
-
 	switch (l_playerAction) {
 		case moveRight:
-			m_playerSprite.move(8,0);
+			m_velocity.x = 1;
 			break;
 
 		case moveLeft:
-			m_playerSprite.move(-8, 0);
+			m_velocity.x = -1;
 			break;
 
 		case jump:
-			m_playerSprite.move(0, -4);
 			break;
 		default:
 			break;

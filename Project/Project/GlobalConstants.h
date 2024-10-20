@@ -5,6 +5,7 @@ namespace global{
 	namespace window {
 		constexpr		char				WINDOW_NAME[7]		{ "Window" };
 		constexpr		char				WINDOW_ICON[23]		{ "Graphics/Icon/icon.png" };
+		constexpr		int					WINDOW_FPS			{ 60 };
 		const			sf::Vector2u		WINDOW_RESOLUTION	{ sf::Vector2u(800,600) };
 		const			sf::Color			WINDOW_COLOR		{ sf::Color::Blue };
 	}

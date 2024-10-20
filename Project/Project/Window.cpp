@@ -11,7 +11,7 @@ Window::~Window() {
 }
 void Window::Setup(const sf::Vector2u l_size) {
 	m_windowSize = l_size;
-	m_windowFPS = 60;
+	m_windowFPS = global::window::WINDOW_FPS;
 	m_windowIcon.loadFromFile(global::window::WINDOW_ICON);
 	m_isFullScreen = false;
 	m_isDone = false;
@@ -29,7 +29,7 @@ void Window::ToggleFullScreen() {
 	Create();
 }
 
-void Window::Update() {
+void Window::HandleEvents() {
 	sf::Event event;
 	while (m_window.pollEvent(event))
 	{

@@ -9,7 +9,7 @@ public:
 	void BeginDraw(); // clears window
 	void EndDraw(); // draws onto window
 
-	void Update(); // updates frame
+	void HandleEvents();
 
 	bool isDone(); //game loop variable
 	bool isFullScreen();

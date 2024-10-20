@@ -1,9 +1,11 @@
 #pragma once
 #include "Window.h"
 #include "Player.h"
+#include "Time.h"
 class Game {
 
 public:
+
 	Game();
 	~Game();
 
@@ -11,16 +13,19 @@ public:
 	void HandleInput();
 	void Render();
 
-	sf::Time GetElapsed();
+	float DeltaTime();
 	void RestartClock();
+	sf::Time GetElapsed();
 
 	Window* GetWindow();
 
 private:
+
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
 
 	Player player;
 
 	Window m_window;
+
 };
