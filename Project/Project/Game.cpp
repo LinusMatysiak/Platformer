@@ -15,6 +15,8 @@ void Game::HandleInput() {
 	player.HandlePlayerInput();
 }
 void Game::Render() {
+	sf::View view(sf::FloatRect(0.f,0.f,300.f,300.0f));
+	m_window.setView(view);
 	m_window.BeginDraw();
 	m_window.Draw(player.GetSprite());
 	m_window.EndDraw();

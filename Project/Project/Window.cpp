@@ -44,6 +44,7 @@ void Window::HandleEvents() {
 	}
 }
 
+void Window::setView(sf::View l_view)		{ m_window.setView(l_view); }
 void Window::BeginDraw()					{ m_window.clear(sf::Color(global::window::WINDOW_COLOR)); }
 void Window::Destroy()						{ m_window.close(); }
 bool Window::isDone()						{ return m_isDone; }

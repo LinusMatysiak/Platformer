@@ -11,6 +11,7 @@ public:
 
 	void HandleEvents();
 
+	void setView(sf::View l_view);
 	bool isDone(); //game loop variable
 	bool isFullScreen();
 	sf::Vector2u GetWindowSize();
